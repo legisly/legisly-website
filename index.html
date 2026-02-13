@@ -98,7 +98,7 @@
 
         /* Ensure all content sections sit above the flow lines */
         nav, .hero, .stats-bar, .section, .section-light, .dashboard-preview,
-        .image-break, .cta-section, footer {
+        .visual-break, .cta-section, footer {
             position: relative;
             z-index: 1;
         }
@@ -894,27 +894,184 @@
         }
 
         /* Full-width image break */
-        .image-break {
+        /* Animated visual break */
+        .visual-break {
             width: 100%;
-            padding: 2rem 4rem;
-            background: var(--bg-secondary);
+            height: 340px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, #0d1a2e 30%, #111d33 70%, var(--bg-primary) 100%);
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
 
-        .image-break-inner {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
+        .visual-break-canvas {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
         }
 
-        .image-break img {
+        /* Animated orbs */
+        .vb-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(1px);
+        }
+
+        .vb-orb-1 {
+            width: 180px; height: 180px;
+            background: radial-gradient(circle, rgba(20,184,166,0.5) 0%, rgba(20,184,166,0) 70%);
+            top: 20%; left: 10%;
+            animation: vbFloat1 8s ease-in-out infinite;
+        }
+        .vb-orb-2 {
+            width: 240px; height: 240px;
+            background: radial-gradient(circle, rgba(139,92,246,0.4) 0%, rgba(139,92,246,0) 70%);
+            top: 10%; right: 15%;
+            animation: vbFloat2 10s ease-in-out infinite;
+        }
+        .vb-orb-3 {
+            width: 140px; height: 140px;
+            background: radial-gradient(circle, rgba(6,182,212,0.45) 0%, rgba(6,182,212,0) 70%);
+            bottom: 15%; left: 40%;
+            animation: vbFloat3 7s ease-in-out infinite;
+        }
+        .vb-orb-4 {
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(20,184,166,0.35) 0%, rgba(20,184,166,0) 70%);
+            bottom: 5%; right: 5%;
+            animation: vbFloat1 9s ease-in-out infinite reverse;
+        }
+
+        @keyframes vbFloat1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -20px) scale(1.15); }
+            66% { transform: translate(-15px, 15px) scale(0.9); }
+        }
+        @keyframes vbFloat2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-40px, 25px) scale(1.2); }
+        }
+        @keyframes vbFloat3 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(20px, -15px) scale(1.1); }
+            75% { transform: translate(-25px, 10px) scale(0.95); }
+        }
+
+        /* Network nodes */
+        .vb-node {
+            position: absolute;
+            width: 6px; height: 6px;
+            background: var(--accent-light);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--accent), 0 0 30px var(--accent-glow);
+            animation: vbPulse 3s ease-in-out infinite;
+        }
+        .vb-node:nth-child(1) { top: 25%; left: 8%; animation-delay: 0s; }
+        .vb-node:nth-child(2) { top: 55%; left: 18%; animation-delay: 0.5s; }
+        .vb-node:nth-child(3) { top: 35%; left: 30%; animation-delay: 1s; }
+        .vb-node:nth-child(4) { top: 70%; left: 42%; animation-delay: 0.3s; }
+        .vb-node:nth-child(5) { top: 20%; left: 52%; animation-delay: 1.5s; }
+        .vb-node:nth-child(6) { top: 60%; left: 62%; animation-delay: 0.8s; }
+        .vb-node:nth-child(7) { top: 30%; left: 75%; animation-delay: 1.2s; }
+        .vb-node:nth-child(8) { top: 65%; left: 85%; animation-delay: 0.4s; }
+        .vb-node:nth-child(9) { top: 45%; left: 92%; animation-delay: 1.8s; }
+        .vb-node:nth-child(10) { top: 15%; left: 65%; animation-delay: 2s; }
+        .vb-node:nth-child(11) { top: 80%; left: 28%; animation-delay: 0.7s; }
+        .vb-node:nth-child(12) { top: 50%; left: 48%; animation-delay: 1.4s; }
+
+        @keyframes vbPulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.8); }
+        }
+
+        /* Connection lines via SVG */
+        .vb-connections {
+            position: absolute;
+            inset: 0;
             width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            height: 100%;
+        }
+        .vb-connections line {
+            stroke: var(--accent);
+            stroke-width: 0.5;
+            opacity: 0.2;
+        }
+        .vb-conn-animated {
+            stroke-dasharray: 6 4;
+            animation: vbDash 4s linear infinite;
+        }
+        @keyframes vbDash {
+            to { stroke-dashoffset: -40; }
+        }
+
+        /* Horizontal light sweep */
+        .vb-sweep {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(20,184,166,0.06), rgba(139,92,246,0.04), transparent);
+            animation: vbSweep 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes vbSweep {
+            0% { left: -50%; }
+            100% { left: 150%; }
+        }
+
+        /* Center text overlay */
+        .vb-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        .vb-text h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        .vb-text p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            max-width: 500px;
+        }
+
+        /* Spinning ring accent */
+        .vb-ring {
+            position: absolute;
+            border: 1px solid rgba(20,184,166,0.15);
+            border-top-color: rgba(20,184,166,0.5);
+            border-radius: 50%;
+            animation: vbSpin 12s linear infinite;
+        }
+        .vb-ring-1 {
+            width: 300px; height: 300px;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .vb-ring-2 {
+            width: 200px; height: 200px;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            border-top-color: rgba(139,92,246,0.4);
+            animation-direction: reverse;
+            animation-duration: 8s;
+        }
+        @keyframes vbSpin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
         /* CTA Section */
@@ -1279,9 +1436,15 @@
                 gap: 2.5rem;
             }
 
-            .image-break-inner {
-                grid-template-columns: 1fr;
+            .visual-break {
+                height: 280px;
             }
+            .vb-orb-1, .vb-orb-4 { display: none; }
+            .vb-ring-1 { width: 220px; height: 220px; }
+            .vb-ring-2 { width: 140px; height: 140px; }
+            .vb-text h3 { font-size: 1.2rem; }
+            .vb-text p { font-size: 0.85rem; }
+            .vb-node { box-shadow: 0 0 8px var(--accent); }
 
             .dashboard-preview {
                 padding: 0 1.5rem 3rem;
@@ -1584,11 +1747,55 @@
         </div>
     </section>
 
-    <!-- Image Break -->
-    <div class="image-break">
-        <div class="image-break-inner">
-            <img src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?auto=format&fit=crop&w=600&q=80" alt="United States Capitol building representing legislative policy" loading="lazy">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="Modern office workspace with clean architecture" loading="lazy">
+    <!-- Animated Visual Break -->
+    <div class="visual-break">
+        <div class="visual-break-canvas">
+            <!-- Glowing orbs -->
+            <div class="vb-orb vb-orb-1"></div>
+            <div class="vb-orb vb-orb-2"></div>
+            <div class="vb-orb vb-orb-3"></div>
+            <div class="vb-orb vb-orb-4"></div>
+
+            <!-- Spinning rings -->
+            <div class="vb-ring vb-ring-1"></div>
+            <div class="vb-ring vb-ring-2"></div>
+
+            <!-- Network nodes -->
+            <div class="vb-node"></div>
+            <div class="vb-node"></div>
+            <div class="vb-node"></div>
+            <div class="vb-node"></div>
+            <div class="vb-node"></div>
+            <div class="vb-node"></div>
+            <div class="vb-node"></div>
+            <div class="vb-node"></div>
+            <div class="vb-node"></div>
+            <div class="vb-node"></div>
+            <div class="vb-node"></div>
+            <div class="vb-node"></div>
+
+            <!-- Connection lines -->
+            <svg class="vb-connections" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <line x1="8" y1="25" x2="30" y2="35" class="vb-conn-animated"/>
+                <line x1="18" y1="55" x2="42" y2="70"/>
+                <line x1="30" y1="35" x2="52" y2="20" class="vb-conn-animated"/>
+                <line x1="42" y1="70" x2="62" y2="60"/>
+                <line x1="52" y1="20" x2="75" y2="30" class="vb-conn-animated"/>
+                <line x1="62" y1="60" x2="85" y2="65"/>
+                <line x1="75" y1="30" x2="92" y2="45" class="vb-conn-animated"/>
+                <line x1="48" y1="50" x2="65" y2="15"/>
+                <line x1="28" y1="80" x2="48" y2="50" class="vb-conn-animated"/>
+                <line x1="65" y1="15" x2="85" y2="65"/>
+            </svg>
+
+            <!-- Light sweep -->
+            <div class="vb-sweep"></div>
+        </div>
+
+        <!-- Center text -->
+        <div class="vb-text">
+            <h3>Connecting Policy to Action</h3>
+            <p>Real-time intelligence across 50 states, thousands of bills, one platform.</p>
         </div>
     </div>
 
