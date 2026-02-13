@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features — Legisly</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            border-color: #3a3a3a;
+            transform: translateY(-4px);
+        }
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+        }
+        .feature-card h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .feature-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            color: var(--text-secondary);
+            padding: 0.4rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">LEGISLY</a>
+        <div class="nav-links">
+            <a href="features.html" class="active">Features</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="index.html#cta" class="btn-primary">Get Early Access</a>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Everything you need to <span class="highlight">shape policy</span></h1>
+        <p>AI-powered tools that track, analyze, and act — so you can influence the laws that affect your business.</p>
+    </section>
+
+    <section class="section">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>AI Bill Tracking</h3>
+                <p>Every bill that affects you, tracked automatically. Our AI monitors thousands of bills and surfaces only what matters.</p>
+                <ul class="feature-list">
+                    <li>Real-time monitoring across all states</li>
+                    <li>Smart filtering by industry & keyword</li>
+                    <li>Automatic status change alerts</li>
+                    <li>Full bill history & version comparison</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>One-Click Reports</h3>
+                <p>Ask in plain English. Get professional reports in seconds. Board meetings, client updates — generated instantly.</p>
+                <ul class="feature-list">
+                    <li>Natural language queries</li>
+                    <li>Professional PDF exports</li>
+                    <li>Scheduled auto-delivery</li>
+                    <li>Custom templates</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">✉️</div>
+                <h3>Letter Generation</h3>
+                <p>AI drafts professional support or opposition letters. Your voice, your concerns, ready to send in minutes.</p>
+                <ul class="feature-list">
+                    <li>Support & opposition letters</li>
+                    <li>Committee testimony</li>
+                    <li>Amendment language</li>
+                    <li>Customizable tone & format</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Predictive Scoring</h3>
+                <p>AI predicts which bills will pass. Focus your energy on fights you can actually win.</p>
+                <ul class="feature-list">
+                    <li>Likelihood score for every bill</li>
+                    <li>Key factors explained</li>
+                    <li>Historical accuracy tracking</li>
+                    <li>Real-time updates</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔔</div>
+                <h3>Smart Alerts</h3>
+                <p>Get notified the moment something changes. Email, SMS, or push — you choose how and when.</p>
+                <ul class="feature-list">
+                    <li>Multi-channel delivery</li>
+                    <li>Custom triggers & thresholds</li>
+                    <li>Deadline reminders</li>
+                    <li>Daily or weekly digests</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3>Coalition Building</h3>
+                <p>See who else is fighting your fight. Connect and coordinate for maximum impact.</p>
+                <ul class="feature-list">
+                    <li>Discover allies on same bills</li>
+                    <li>Share positions & strategy</li>
+                    <li>Joint sign-on letters</li>
+                    <li>Strength in numbers</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <h3>Smart Calendar</h3>
+                <p>Never miss a hearing or deadline. All legislative dates synced to your calendar automatically.</p>
+                <ul class="feature-list">
+                    <li>Hearing dates auto-populated</li>
+                    <li>Export to Google/Outlook/iCal</li>
+                    <li>Reminder notifications</li>
+                    <li>Action window alerts</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👤</div>
+                <h3>Legislator Profiles</h3>
+                <p>Know who you're dealing with. Full profiles, voting history, and contact information.</p>
+                <ul class="feature-list">
+                    <li>Bio & committee assignments</li>
+                    <li>Voting pattern analysis</li>
+                    <li>Contact information</li>
+                    <li>Social media links</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="cta">
+        <h2>Ready to get the edge?</h2>
+        <p>Join the waitlist and be first to access Legisly when we launch.</p>
+        <form class="email-form" action="https://formspree.io/f/mdalewlb" method="POST">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="hidden" name="_subject" value="New Legisly Waitlist Signup!">
+            <input type="hidden" name="_next" value="https://legisly.ai/thank-you.html">
+            <button type="submit" class="btn-primary">Join Waitlist</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">LEGISLY</a>
+                <p>AI-powered legislative tools that let any business compete — and win.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="security.html">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Legisly Labs, Inc. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

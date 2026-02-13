@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers — Legisly</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .careers-intro {
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        .careers-intro p {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .jobs-section h2 {
+            margin-bottom: 2rem;
+        }
+        .job-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .job-card:hover {
+            border-color: #3a3a3a;
+        }
+        .job-info h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .job-meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .job-meta span {
+            margin-right: 1.5rem;
+        }
+        .no-jobs-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 4rem;
+            text-align: center;
+        }
+        .no-jobs-box h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .no-jobs-box p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .values-section {
+            margin-top: 5rem;
+            padding-top: 5rem;
+            border-top: 1px solid var(--border-color);
+        }
+        .values-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .perks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .perk-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .perk-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .perk-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .perk-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">LEGISLY</a>
+        <div class="nav-links">
+            <a href="features.html">Features</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="index.html#cta" class="btn-primary">Get Early Access</a>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Join the <span class="highlight">Legisly Team</span></h1>
+        <p>Help us democratize legislative intelligence.</p>
+    </section>
+
+    <section class="section">
+        <div class="careers-intro">
+            <p>We're building tools that give every business a voice in the legislative process. It's important work, and we're looking for people who believe in our mission.</p>
+        </div>
+
+        <div class="jobs-section">
+            <h2>Open Positions</h2>
+            
+            <div class="no-jobs-box">
+                <h3>No Open Positions Right Now</h3>
+                <p>We're not actively hiring at the moment, but we're always interested in hearing from talented people. Send us your resume and tell us why you'd be a great fit.</p>
+                <a href="mailto:hadi@legisly.ai" class="btn-primary">Send Your Resume</a>
+            </div>
+
+            <!-- Future job listings template
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>Senior Full-Stack Developer</h3>
+                    <div class="job-meta">
+                        <span>📍 Remote</span>
+                        <span>💼 Full-time</span>
+                        <span>🏷️ Engineering</span>
+                    </div>
+                </div>
+                <a href="#" class="btn-secondary">View Job</a>
+            </div>
+            -->
+        </div>
+
+        <div class="values-section">
+            <h2>Why Work at Legisly?</h2>
+            <div class="perks-grid">
+                <div class="perk-card">
+                    <div class="perk-icon">🌍</div>
+                    <h4>Remote First</h4>
+                    <p>Work from anywhere. We're distributed and asynchronous.</p>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon">🚀</div>
+                    <h4>Early Stage</h4>
+                    <p>Join early and shape the product, culture, and company.</p>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon">💡</div>
+                    <h4>Meaningful Work</h4>
+                    <p>Build tools that make democracy more accessible.</p>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon">📈</div>
+                    <h4>Growth</h4>
+                    <p>Learn fast in a startup environment with real responsibility.</p>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon">🤖</div>
+                    <h4>Cutting Edge</h4>
+                    <p>Work with the latest AI technology and shape the future.</p>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon">💰</div>
+                    <h4>Equity</h4>
+                    <p>Meaningful ownership stake in what we're building together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Don't see the right role?</h2>
+        <p>We're always looking for exceptional people. Reach out and tell us about yourself.</p>
+        <a href="mailto:hadi@legisly.ai" class="btn-primary">Get in Touch</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">LEGISLY</a>
+                <p>AI-powered legislative tools that let any business compete — and win.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="security.html">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Legisly Labs, Inc. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

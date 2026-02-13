@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security — Legisly</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        .security-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        .security-card h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .security-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin: 0;
+        }
+        .security-content {
+            max-width: 800px;
+        }
+        .security-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .security-content h2 {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        .security-content ul {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .security-content li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">LEGISLY</a>
+        <div class="nav-links">
+            <a href="features.html">Features</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="index.html#cta" class="btn-primary">Get Early Access</a>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Security at <span class="highlight">Legisly</span></h1>
+        <p>Your data security is our top priority.</p>
+    </section>
+
+    <section class="section">
+        <div class="security-grid">
+            <div class="security-card">
+                <h3>🔐 Encryption</h3>
+                <p>All data is encrypted in transit using TLS 1.3 and at rest using AES-256 encryption.</p>
+            </div>
+            <div class="security-card">
+                <h3>🏢 Infrastructure</h3>
+                <p>We use enterprise-grade cloud infrastructure with SOC 2 certified data centers.</p>
+            </div>
+            <div class="security-card">
+                <h3>🔑 Access Control</h3>
+                <p>Role-based access controls ensure only authorized personnel can access systems and data.</p>
+            </div>
+            <div class="security-card">
+                <h3>📊 Monitoring</h3>
+                <p>24/7 monitoring and logging of all system activity with real-time threat detection.</p>
+            </div>
+            <div class="security-card">
+                <h3>🔄 Backups</h3>
+                <p>Automated daily backups with point-in-time recovery and geographic redundancy.</p>
+            </div>
+            <div class="security-card">
+                <h3>🛡️ Privacy</h3>
+                <p>Your legislative positions and business data are never shared with other users or sold to third parties.</p>
+            </div>
+        </div>
+
+        <div class="security-content">
+            <h2>Our Security Practices</h2>
+            <p>At Legisly, we understand that legislative intelligence often involves sensitive business strategies and positions. We've built our platform with security as a foundational principle, not an afterthought.</p>
+
+            <h2>Data Protection</h2>
+            <p>Your data is protected through multiple layers of security:</p>
+            <ul>
+                <li><strong>Encryption in Transit:</strong> All communications between your browser and our servers use TLS 1.3 encryption.</li>
+                <li><strong>Encryption at Rest:</strong> All stored data is encrypted using AES-256, an industry-standard encryption algorithm.</li>
+                <li><strong>Database Security:</strong> Our databases are isolated within private networks with no direct internet access.</li>
+                <li><strong>Secure Backups:</strong> Backups are encrypted and stored in geographically separate locations.</li>
+            </ul>
+
+            <h2>Application Security</h2>
+            <p>We follow security best practices in our development process:</p>
+            <ul>
+                <li>Regular security code reviews and automated vulnerability scanning</li>
+                <li>Dependency monitoring for known vulnerabilities</li>
+                <li>Secure authentication with password hashing and optional two-factor authentication</li>
+                <li>Protection against common web vulnerabilities (XSS, CSRF, SQL injection)</li>
+                <li>Rate limiting and DDoS protection</li>
+            </ul>
+
+            <h2>Infrastructure Security</h2>
+            <p>Our infrastructure is designed for security and reliability:</p>
+            <ul>
+                <li>Hosted on enterprise cloud providers with SOC 2 Type II certification</li>
+                <li>Network isolation with firewalls and private subnets</li>
+                <li>Automated security patching and updates</li>
+                <li>Multi-region deployment for high availability</li>
+                <li>Regular penetration testing by third-party security firms</li>
+            </ul>
+
+            <h2>Access Controls</h2>
+            <p>We strictly limit who can access what:</p>
+            <ul>
+                <li>Principle of least privilege for all employee access</li>
+                <li>Multi-factor authentication required for all administrative access</li>
+                <li>Detailed audit logs of all data access</li>
+                <li>Regular access reviews and immediate revocation upon role changes</li>
+            </ul>
+
+            <h2>Compliance</h2>
+            <p>We are committed to meeting the highest standards of data protection and are working toward SOC 2 Type II certification. We comply with applicable data protection regulations including CCPA.</p>
+
+            <h2>Incident Response</h2>
+            <p>We maintain a comprehensive incident response plan that includes:</p>
+            <ul>
+                <li>24/7 monitoring and alerting</li>
+                <li>Defined escalation procedures</li>
+                <li>Communication protocols for affected users</li>
+                <li>Post-incident analysis and remediation</li>
+            </ul>
+
+            <h2>Responsible Disclosure</h2>
+            <p>We welcome security researchers to report vulnerabilities responsibly. If you discover a security issue, please email us at <a href="mailto:hadi@legisly.ai">hadi@legisly.ai</a> with details. We commit to investigating all reports and will not take legal action against researchers who follow responsible disclosure practices.</p>
+
+            <h2>Questions?</h2>
+            <p>If you have questions about our security practices or would like to discuss enterprise security requirements, please contact us at <a href="mailto:hadi@legisly.ai">hadi@legisly.ai</a>.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">LEGISLY</a>
+                <p>AI-powered legislative tools that let any business compete — and win.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="security.html">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Legisly Labs, Inc. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

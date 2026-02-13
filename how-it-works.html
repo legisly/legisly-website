@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works — Legisly</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .steps-container {
+            position: relative;
+            margin-top: 3rem;
+        }
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            left: 39px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+            opacity: 0.3;
+        }
+        .step {
+            display: flex;
+            gap: 2.5rem;
+            padding: 2.5rem 0;
+        }
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 700;
+            font-size: 1.75rem;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+        .step-content h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+        .step-detail {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        .step-detail h4 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-light);
+            margin-bottom: 0.5rem;
+        }
+        .step-detail p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        .time-badge {
+            display: inline-block;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--accent-light);
+            margin-bottom: 0.75rem;
+        }
+        @media (max-width: 768px) {
+            .step { flex-direction: column; gap: 1.5rem; }
+            .steps-container::before { display: none; }
+            .step-number { width: 60px; height: 60px; font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">LEGISLY</a>
+        <div class="nav-links">
+            <a href="features.html">Features</a>
+            <a href="how-it-works.html" class="active">How It Works</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="index.html#cta" class="btn-primary">Get Early Access</a>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>From signup to <span class="highlight">action in 5 minutes</span></h1>
+        <p>No expertise required. No complex setup. Just tell us about your business and let AI do the rest.</p>
+    </section>
+
+    <section class="section">
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <span class="time-badge">⏱ 2 minutes</span>
+                    <h3>Tell us about your business</h3>
+                    <p>Describe what you do in plain English. No forms to fill out, no categories to select. Just tell us who you are and what you care about.</p>
+                    <div class="step-detail">
+                        <h4>Example</h4>
+                        <p>"I run a chain of restaurants in Sacramento" or "We're a renewable energy trade association" or "I'm a lobbyist representing healthcare clients"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <span class="time-badge">⏱ Instant</span>
+                    <h3>AI identifies relevant legislation</h3>
+                    <p>Our AI analyzes thousands of bills and surfaces only the ones that affect you. It understands your industry, your concerns, and your priorities.</p>
+                    <div class="step-detail">
+                        <h4>What you get</h4>
+                        <p>A curated watchlist of bills that matter, ranked by relevance and urgency. No noise — just what you need to know.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <span class="time-badge">⏱ Ongoing</span>
+                    <h3>Stay informed automatically</h3>
+                    <p>Get alerts when bills change status, when deadlines approach, or when action is needed. Email, SMS, or push notifications — your choice.</p>
+                    <div class="step-detail">
+                        <h4>Never miss a beat</h4>
+                        <p>AI monitors 24/7 so you don't have to. Wake up to a daily digest or get real-time alerts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <span class="time-badge">⏱ 30 seconds</span>
+                    <h3>Generate reports and analysis</h3>
+                    <p>Ask questions in plain English: "What changed this week?" or "Which bills threaten my industry?" Get professional reports instantly.</p>
+                    <div class="step-detail">
+                        <h4>Ready to share</h4>
+                        <p>Export as PDF for board meetings, client updates, or internal briefings. Scheduled reports delivered automatically.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">05</div>
+                <div class="step-content">
+                    <span class="time-badge">⏱ Minutes, not days</span>
+                    <h3>Take action with AI-powered tools</h3>
+                    <p>Generate professional letters, testimony, and talking points. Show up to hearings prepared. Make your voice heard on the issues that matter.</p>
+                    <div class="step-detail">
+                        <h4>Your voice, amplified</h4>
+                        <p>AI drafts, you review and customize. Your concerns, your tone — just faster and more professional than ever before.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="cta">
+        <h2>Ready to get started?</h2>
+        <p>Join the waitlist and be among the first to experience the future of legislative intelligence.</p>
+        <form class="email-form" action="https://formspree.io/f/mdalewlb" method="POST">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="hidden" name="_subject" value="New Legisly Waitlist Signup!">
+            <input type="hidden" name="_next" value="https://legisly.ai/thank-you.html">
+            <button type="submit" class="btn-primary">Join Waitlist</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">LEGISLY</a>
+                <p>AI-powered legislative tools that let any business compete — and win.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="security.html">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Legisly Labs, Inc. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

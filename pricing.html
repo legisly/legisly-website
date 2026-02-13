@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing — Legisly</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .pricing-card.featured {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            border-color: var(--accent);
+            position: relative;
+        }
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+        }
+        .plan-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        .price {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .pricing-card.featured .price {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+        .plan-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+        .plan-features li {
+            padding: 0.6rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+        .plan-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+        }
+        .plan-cta {
+            margin-top: auto;
+        }
+        .plan-cta .btn-primary, .plan-cta .btn-secondary {
+            width: 100%;
+            text-align: center;
+        }
+        .compare-section {
+            margin-top: 5rem;
+            padding-top: 5rem;
+            border-top: 1px solid var(--border-color);
+        }
+        .compare-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .compare-table th, .compare-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .compare-table th {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .compare-table td:first-child {
+            color: var(--text-primary);
+        }
+        .compare-table td {
+            color: var(--text-secondary);
+        }
+        .check { color: var(--accent-light); }
+        @media (max-width: 900px) {
+            .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">LEGISLY</a>
+        <div class="nav-links">
+            <a href="features.html">Features</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="pricing.html" class="active">Pricing</a>
+            <a href="index.html#cta" class="btn-primary">Get Early Access</a>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Simple, <span class="highlight">transparent pricing</span></h1>
+        <p>No hidden fees. No long-term contracts. Cancel anytime.</p>
+    </section>
+
+    <section class="section">
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="plan-name">Starter</div>
+                <div class="price">$99<span>/month</span></div>
+                <p class="plan-description">Perfect for small businesses tracking legislation in one state.</p>
+                <ul class="plan-features">
+                    <li>1 state coverage</li>
+                    <li>Up to 50 tracked bills</li>
+                    <li>AI bill summaries</li>
+                    <li>Weekly email reports</li>
+                    <li>Email alerts</li>
+                    <li>Basic letter generation</li>
+                    <li>Email support</li>
+                </ul>
+                <div class="plan-cta">
+                    <a href="index.html#cta" class="btn-secondary">Join Waitlist</a>
+                </div>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="plan-name">Professional</div>
+                <div class="price">$199<span>/month</span></div>
+                <p class="plan-description">For firms and associations that need comprehensive coverage.</p>
+                <ul class="plan-features">
+                    <li>4 state coverage</li>
+                    <li>Unlimited tracked bills</li>
+                    <li>AI bill summaries</li>
+                    <li>Daily reports + custom scheduling</li>
+                    <li>Email, SMS & push alerts</li>
+                    <li>Advanced letter & testimony generation</li>
+                    <li>Predictive passage scoring</li>
+                    <li>Legislator profiles</li>
+                    <li>Priority support</li>
+                </ul>
+                <div class="plan-cta">
+                    <a href="index.html#cta" class="btn-primary">Join Waitlist</a>
+                </div>
+            </div>
+
+            <div class="pricing-card">
+                <div class="plan-name">Enterprise</div>
+                <div class="price">Custom</div>
+                <p class="plan-description">For large organizations with custom needs and multiple teams.</p>
+                <ul class="plan-features">
+                    <li>50 state + federal coverage</li>
+                    <li>Unlimited everything</li>
+                    <li>Custom AI training</li>
+                    <li>API access</li>
+                    <li>White-label options</li>
+                    <li>SSO & advanced security</li>
+                    <li>Dedicated account manager</li>
+                    <li>Custom integrations</li>
+                    <li>SLA guarantee</li>
+                </ul>
+                <div class="plan-cta">
+                    <a href="contact.html" class="btn-secondary">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="compare-section">
+            <h2>Compare Plans</h2>
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Starter</th>
+                        <th>Professional</th>
+                        <th>Enterprise</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>State coverage</td>
+                        <td>1 state</td>
+                        <td>4 states</td>
+                        <td>50 states + federal</td>
+                    </tr>
+                    <tr>
+                        <td>Tracked bills</td>
+                        <td>50</td>
+                        <td>Unlimited</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td>AI summaries</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Predictive scoring</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Letter generation</td>
+                        <td>Basic</td>
+                        <td>Advanced</td>
+                        <td>Advanced + Custom</td>
+                    </tr>
+                    <tr>
+                        <td>SMS alerts</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>API access</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Support</td>
+                        <td>Email</td>
+                        <td>Priority</td>
+                        <td>Dedicated manager</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="cta-section" id="cta">
+        <h2>Ready to get started?</h2>
+        <p>Join the waitlist. Launching Summer 2025.</p>
+        <form class="email-form" action="https://formspree.io/f/mdalewlb" method="POST">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="hidden" name="_subject" value="New Legisly Waitlist Signup!">
+            <input type="hidden" name="_next" value="https://legisly.ai/thank-you.html">
+            <button type="submit" class="btn-primary">Join Waitlist</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">LEGISLY</a>
+                <p>AI-powered legislative tools that let any business compete — and win.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="security.html">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Legisly Labs, Inc. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
