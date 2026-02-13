@@ -1314,6 +1314,25 @@
             .mock-bill-name {
                 font-size: 0.72rem;
             }
+
+            /* Fix: remove expensive SVG filter on mobile so dash animation runs smoothly */
+            .flow-line-1,
+            .flow-line-2,
+            .flow-line-3 {
+                filter: none !important;
+            }
+            .flow-line-1 {
+                stroke-width: 3;
+                opacity: 0.9;
+            }
+            .flow-line-2 {
+                stroke-width: 2.5;
+                opacity: 0.6;
+            }
+            .flow-line-3 {
+                stroke-width: 2;
+                opacity: 0.45;
+            }
         }
     </style>
 </head>
