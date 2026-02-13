@@ -461,19 +461,221 @@
             color: var(--accent);
         }
 
-        /* Dashboard Preview Image Section */
+        /* Dashboard Preview Section */
         .dashboard-preview {
             padding: 0 4rem 4rem;
-            max-width: 1300px;
+            max-width: 1100px;
             margin: 0 auto;
-            text-align: center;
         }
 
-        .dashboard-preview img {
-            width: 100%;
-            max-width: 1100px;
+        /* Animated Dashboard Mockup */
+        .dashboard-mock {
+            background: #0F172A;
             border-radius: 16px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--border-color);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4), 0 0 60px rgba(20, 184, 166, 0.08);
+        }
+
+        .mock-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1.25rem;
+            background: #0B1120;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mock-topbar-left {
+            display: flex;
+            gap: 6px;
+        }
+
+        .mock-window-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .mock-window-dot.red { background: #EF4444; }
+        .mock-window-dot.yellow { background: #F59E0B; }
+        .mock-window-dot.green { background: #10B981; }
+
+        .mock-topbar-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            letter-spacing: 0.05em;
+        }
+
+        .mock-topbar-right {
+            width: 50px;
+        }
+
+        .mock-body {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            min-height: 340px;
+        }
+
+        .mock-sidebar {
+            background: #0B1120;
+            border-right: 1px solid var(--border-color);
+            padding: 1.25rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .mock-sidebar-item {
+            padding: 0.6rem 1.25rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: default;
+            transition: all 0.2s;
+        }
+
+        .mock-sidebar-item.active {
+            color: var(--accent-light);
+            background: rgba(20, 184, 166, 0.08);
+            border-left: 2px solid var(--accent);
+        }
+
+        .mock-main {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .mock-panel-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Bill rows */
+        .mock-bill {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: #1E293B;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            transform: translateX(-15px);
+            animation: slideInBill 0.5s ease forwards;
+        }
+
+        .mock-bill.bill-1 { animation-delay: 0.5s; }
+        .mock-bill.bill-2 { animation-delay: 1s; }
+        .mock-bill.bill-3 { animation-delay: 1.5s; }
+
+        @keyframes slideInBill {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .mock-bill-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .mock-bill-status.urgent { background: #EF4444; box-shadow: 0 0 8px rgba(239, 68, 68, 0.5); }
+        .mock-bill-status.watch { background: #F59E0B; box-shadow: 0 0 8px rgba(245, 158, 11, 0.4); }
+        .mock-bill-status.safe { background: #10B981; box-shadow: 0 0 8px rgba(16, 185, 129, 0.4); }
+
+        .mock-bill-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .mock-bill-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .mock-bill-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.68rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        .mock-bill-score {
+            font-family: 'Clash Display', 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+        }
+        .mock-bill-score.high {
+            color: #10B981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .mock-bill-score.medium {
+            color: #F59E0B;
+            background: rgba(245, 158, 11, 0.1);
+        }
+
+        /* Alert rows */
+        .mock-alerts-panel {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.25rem;
+        }
+
+        .mock-alert {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            padding: 0.6rem 0.85rem;
+            background: rgba(30, 58, 95, 0.4);
+            border-radius: 6px;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInAlert 0.4s ease forwards;
+        }
+
+        .mock-alert.alert-1 { animation-delay: 2.2s; }
+        .mock-alert.alert-2 { animation-delay: 2.7s; }
+        .mock-alert.alert-3 { animation-delay: 3.2s; }
+
+        @keyframes fadeInAlert {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .mock-alert-badge {
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            padding: 0.2rem 0.45rem;
+            border-radius: 4px;
+            background: #EF4444;
+            color: white;
+            flex-shrink: 0;
+        }
+        .mock-alert-badge.sms {
+            background: #8B5CF6;
+        }
+        .mock-alert-badge.report {
+            background: #14B8A6;
         }
 
         /* How It Works */
@@ -918,6 +1120,34 @@
             .dashboard-preview {
                 padding: 0 1.5rem 3rem;
             }
+
+            .mock-body {
+                grid-template-columns: 1fr;
+            }
+
+            .mock-sidebar {
+                flex-direction: row;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding: 0.75rem 0.5rem;
+                overflow-x: auto;
+            }
+
+            .mock-sidebar-item {
+                white-space: nowrap;
+                padding: 0.4rem 0.75rem;
+                font-size: 0.7rem;
+            }
+
+            .mock-sidebar-item.active {
+                border-left: none;
+                border-bottom: 2px solid var(--accent);
+                border-radius: 4px;
+            }
+
+            .mock-bill-name {
+                font-size: 0.72rem;
+            }
         }
     </style>
 </head>
@@ -947,7 +1177,7 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="AI-powered analytics dashboard showing legislative data and insights" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=80" alt="Clean laptop displaying charts and analytics data on a modern desk" loading="lazy">
         </div>
     </section>
 
@@ -997,9 +1227,71 @@
         </div>
     </section>
 
-    <!-- Dashboard Preview -->
+    <!-- Animated Dashboard Preview -->
     <div class="dashboard-preview">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Modern analytics dashboard with data visualizations and charts" loading="lazy">
+        <div class="dashboard-mock">
+            <div class="mock-topbar">
+                <div class="mock-topbar-left">
+                    <span class="mock-window-dot red"></span>
+                    <span class="mock-window-dot yellow"></span>
+                    <span class="mock-window-dot green"></span>
+                </div>
+                <div class="mock-topbar-title">Legisly Dashboard</div>
+                <div class="mock-topbar-right"></div>
+            </div>
+            <div class="mock-body">
+                <div class="mock-sidebar">
+                    <div class="mock-sidebar-item active">Bills</div>
+                    <div class="mock-sidebar-item">Alerts</div>
+                    <div class="mock-sidebar-item">Reports</div>
+                    <div class="mock-sidebar-item">Letters</div>
+                </div>
+                <div class="mock-main">
+                    <div class="mock-bills-panel">
+                        <div class="mock-panel-title">Active Bills Tracking</div>
+                        <div class="mock-bill bill-1">
+                            <div class="mock-bill-status urgent"></div>
+                            <div class="mock-bill-info">
+                                <div class="mock-bill-name">SB-1247 Worker Safety Act</div>
+                                <div class="mock-bill-meta">Committee Vote &middot; Mar 15</div>
+                            </div>
+                            <div class="mock-bill-score high">92%</div>
+                        </div>
+                        <div class="mock-bill bill-2">
+                            <div class="mock-bill-status watch"></div>
+                            <div class="mock-bill-info">
+                                <div class="mock-bill-name">AB-892 Data Privacy Amendment</div>
+                                <div class="mock-bill-meta">In Review &middot; Apr 2</div>
+                            </div>
+                            <div class="mock-bill-score medium">67%</div>
+                        </div>
+                        <div class="mock-bill bill-3">
+                            <div class="mock-bill-status safe"></div>
+                            <div class="mock-bill-info">
+                                <div class="mock-bill-name">HB-3301 Small Biz Tax Credit</div>
+                                <div class="mock-bill-meta">Passed Committee &middot; Feb 28</div>
+                            </div>
+                            <div class="mock-bill-score high">88%</div>
+                        </div>
+                    </div>
+                    <div class="mock-alerts-panel">
+                        <div class="mock-panel-title">Live Alerts</div>
+                        <div class="mock-alert alert-1">
+                            <span class="mock-alert-badge">NEW</span>
+                            SB-1247 moved to floor vote — action needed
+                        </div>
+                        <div class="mock-alert alert-2">
+                            <span class="mock-alert-badge sms">SMS</span>
+                            Alert sent to your phone: AB-892 amended
+                        </div>
+                        <div class="mock-alert alert-3">
+                            <span class="mock-alert-badge report">PDF</span>
+                            Weekly report ready — 3 bills updated
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Features Section - Light -->
@@ -1052,8 +1344,8 @@
     <!-- Image Break -->
     <div class="image-break">
         <div class="image-break-inner">
-            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=600&q=80" alt="Data visualization on multiple screens showing real-time analytics" loading="lazy">
-            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80" alt="Modern workspace with developer working on analytics platform" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?auto=format&fit=crop&w=600&q=80" alt="United States Capitol building representing legislative policy" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="Modern office workspace with clean architecture" loading="lazy">
         </div>
     </div>
 
