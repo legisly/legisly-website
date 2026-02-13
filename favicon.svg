@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#0B1120"/>
+  <!-- Modern bold lowercase 'l' as a geometric shape -->
+  <rect x="11" y="5" width="5.5" height="22" rx="1" fill="#F1F5F9"/>
+  <!-- Teal accent dot -->
+  <circle cx="24" cy="23.5" r="3.2" fill="#14B8A6"/>
+</svg>
