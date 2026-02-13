@@ -41,6 +41,66 @@
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 3D Flowing Lines */
+        .flow-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .flow-lines svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .flow-line {
+            fill: none;
+            stroke-linecap: round;
+        }
+
+        .flow-line-1 {
+            stroke: url(#flowGrad1);
+            stroke-width: 2.5;
+            filter: url(#flowGlow);
+            stroke-dasharray: 8 4;
+            animation: flowDash 20s linear infinite;
+        }
+
+        .flow-line-2 {
+            stroke: url(#flowGrad2);
+            stroke-width: 2;
+            filter: url(#flowGlow);
+            opacity: 0.7;
+            stroke-dasharray: 6 6;
+            animation: flowDash 25s linear infinite reverse;
+        }
+
+        .flow-line-3 {
+            stroke: url(#flowGrad3);
+            stroke-width: 1.5;
+            filter: url(#flowGlow);
+            opacity: 0.5;
+            stroke-dasharray: 10 5;
+            animation: flowDash 30s linear infinite;
+        }
+
+        @keyframes flowDash {
+            to { stroke-dashoffset: -200; }
+        }
+
+        /* Ensure all content sections sit above the flow lines */
+        nav, .hero, .stats-bar, .section, .section-light, .dashboard-preview,
+        .image-break, .cta-section, footer {
+            position: relative;
+            z-index: 1;
         }
 
         h1, h2, h3, .logo, .btn-primary, .btn-secondary, .stat-value {
@@ -207,26 +267,131 @@
             flex-wrap: wrap;
         }
 
-        .hero-image {
+        /* Hero 3D Abstract Visual */
+        .hero-visual {
             position: relative;
             z-index: 1;
-        }
-
-        .hero-image img {
             width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 25px 80px rgba(20, 184, 166, 0.15), 0 0 0 1px rgba(30, 58, 95, 0.5);
+            aspect-ratio: 1;
+            max-width: 520px;
+            margin: 0 auto;
         }
 
-        .hero-image::after {
+        .hv-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: hvFloat 8s ease-in-out infinite;
+        }
+
+        .hv-orb-1 {
+            width: 55%;
+            height: 55%;
+            top: 10%;
+            left: 5%;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.5) 0%, rgba(20, 184, 166, 0) 70%);
+        }
+
+        .hv-orb-2 {
+            width: 50%;
+            height: 50%;
+            bottom: 10%;
+            right: 5%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.45) 0%, rgba(139, 92, 246, 0) 70%);
+            animation-delay: -4s;
+            animation-direction: reverse;
+        }
+
+        .hv-orb-3 {
+            width: 35%;
+            height: 35%;
+            top: 40%;
+            left: 35%;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, rgba(6, 182, 212, 0) 70%);
+            animation-delay: -2s;
+        }
+
+        @keyframes hvFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(10px, -15px) scale(1.05); }
+            50% { transform: translate(-5px, 10px) scale(0.95); }
+            75% { transform: translate(-10px, -5px) scale(1.02); }
+        }
+
+        .hv-grid {
+            position: absolute;
+            inset: 15%;
+            background-image:
+                linear-gradient(rgba(20, 184, 166, 0.12) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(20, 184, 166, 0.12) 1px, transparent 1px);
+            background-size: 35px 35px;
+            transform: perspective(600px) rotateX(25deg) rotateY(-15deg);
+            border-radius: 12px;
+            mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 70%);
+        }
+
+        .hv-ring {
+            position: absolute;
+            width: 45%;
+            height: 45%;
+            top: 28%;
+            left: 28%;
+            border: 2px solid rgba(20, 184, 166, 0.25);
+            border-radius: 50%;
+            animation: hvSpin 20s linear infinite;
+            box-shadow: 0 0 30px rgba(20, 184, 166, 0.1), inset 0 0 30px rgba(20, 184, 166, 0.05);
+        }
+
+        .hv-ring::before {
             content: '';
             position: absolute;
-            inset: -1px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, rgba(20, 184, 166, 0.2), transparent 50%, rgba(139, 92, 246, 0.2));
-            z-index: -1;
-            padding: 1px;
+            width: 130%;
+            height: 130%;
+            top: -15%;
+            left: -15%;
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 50%;
+            animation: hvSpin 30s linear infinite reverse;
         }
+
+        @keyframes hvSpin {
+            to { transform: rotate(360deg); }
+        }
+
+        .hv-dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 12px rgba(20, 184, 166, 0.6);
+            animation: hvPulse 3s ease-in-out infinite;
+        }
+
+        .hv-dot:nth-child(5) { top: 22%; left: 28%; animation-delay: 0s; }
+        .hv-dot:nth-child(6) { top: 55%; left: 72%; animation-delay: 0.5s; }
+        .hv-dot:nth-child(7) { top: 38%; left: 52%; animation-delay: 1s; width: 8px; height: 8px; }
+        .hv-dot:nth-child(8) { top: 70%; left: 30%; animation-delay: 1.5s; }
+        .hv-dot:nth-child(9) { top: 30%; left: 68%; animation-delay: 2s; }
+        .hv-dot:nth-child(10) { top: 65%; left: 55%; animation-delay: 0.8s; background: #8B5CF6; box-shadow: 0 0 12px rgba(139, 92, 246, 0.6); }
+
+        @keyframes hvPulse {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        .hv-line {
+            position: absolute;
+            height: 1px;
+            transform-origin: left center;
+            opacity: 0.25;
+        }
+
+        .hv-line-1 { top: 25%; left: 30%; width: 25%; transform: rotate(35deg); background: linear-gradient(90deg, var(--accent), transparent); }
+        .hv-line-2 { top: 55%; left: 50%; width: 25%; transform: rotate(-20deg); background: linear-gradient(90deg, #8B5CF6, transparent); }
+        .hv-line-3 { top: 40%; left: 28%; width: 30%; transform: rotate(10deg); background: linear-gradient(90deg, #06B6D4, transparent); }
+        .hv-line-4 { top: 65%; left: 35%; width: 25%; transform: rotate(-35deg); background: linear-gradient(90deg, var(--accent), transparent); }
 
         /* Stats Bar */
         .stats-bar {
@@ -1046,7 +1211,7 @@
         .hero p { animation-delay: 0.2s; }
         .hero-cta { animation-delay: 0.3s; }
 
-        .hero-image {
+        .hero-visual {
             animation: fadeInUp 0.8s ease forwards;
             animation-delay: 0.3s;
             opacity: 0;
@@ -1078,8 +1243,9 @@
                 justify-content: center;
             }
 
-            .hero-image {
+            .hero-visual {
                 order: -1;
+                max-width: 320px;
             }
 
             .section {
@@ -1152,9 +1318,53 @@
     </style>
 </head>
 <body>
+    <!-- 3D Flowing Lines Background -->
+    <div class="flow-lines">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="flowGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#14B8A6" stop-opacity="0"/>
+                    <stop offset="15%" stop-color="#14B8A6" stop-opacity="0.7"/>
+                    <stop offset="35%" stop-color="#06B6D4" stop-opacity="0.5"/>
+                    <stop offset="55%" stop-color="#8B5CF6" stop-opacity="0.6"/>
+                    <stop offset="75%" stop-color="#14B8A6" stop-opacity="0.5"/>
+                    <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="flowGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0"/>
+                    <stop offset="20%" stop-color="#8B5CF6" stop-opacity="0.6"/>
+                    <stop offset="45%" stop-color="#14B8A6" stop-opacity="0.4"/>
+                    <stop offset="65%" stop-color="#06B6D4" stop-opacity="0.5"/>
+                    <stop offset="85%" stop-color="#8B5CF6" stop-opacity="0.6"/>
+                    <stop offset="100%" stop-color="#14B8A6" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="flowGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#06B6D4" stop-opacity="0"/>
+                    <stop offset="25%" stop-color="#06B6D4" stop-opacity="0.5"/>
+                    <stop offset="50%" stop-color="#14B8A6" stop-opacity="0.3"/>
+                    <stop offset="75%" stop-color="#8B5CF6" stop-opacity="0.4"/>
+                    <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+                </linearGradient>
+                <filter id="flowGlow">
+                    <feGaussianBlur stdDeviation="0.3" result="blur"/>
+                    <feMerge>
+                        <feMergeNode in="blur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            <!-- Line 1: Teal - flows left side weaving right -->
+            <path class="flow-line flow-line-1" d="M 15,-2 C 20,5 35,8 25,15 C 15,22 40,27 32,35 C 24,43 45,48 38,55 C 28,63 48,68 40,76 C 32,84 50,90 42,98 L 42,102"/>
+            <!-- Line 2: Purple - flows right side weaving left -->
+            <path class="flow-line flow-line-2" d="M 85,-2 C 80,6 65,10 72,18 C 80,26 58,32 66,40 C 74,48 55,54 62,62 C 70,70 52,76 60,84 C 68,92 48,96 55,102"/>
+            <!-- Line 3: Cyan - flows center -->
+            <path class="flow-line flow-line-3" d="M 50,-2 C 54,8 42,14 48,22 C 54,30 40,36 46,44 C 52,52 38,58 44,66 C 50,74 36,80 42,88 C 48,96 38,100 44,102"/>
+        </svg>
+    </div>
+
     <!-- Navigation -->
     <nav>
-        <a href="index.html" class="logo">LEGISLY</a>
+        <a href="#" class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">LEGISLY</a>
         <div class="nav-links">
             <a href="features.html">Features</a>
             <a href="how-it-works.html">How It Works</a>
@@ -1176,8 +1386,22 @@
                 <a href="#how-it-works" class="btn-secondary">See How It Works</a>
             </div>
         </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=80" alt="Clean laptop displaying charts and analytics data on a modern desk" loading="lazy">
+        <div class="hero-visual">
+            <div class="hv-orb hv-orb-1"></div>
+            <div class="hv-orb hv-orb-2"></div>
+            <div class="hv-orb hv-orb-3"></div>
+            <div class="hv-grid"></div>
+            <div class="hv-dot"></div>
+            <div class="hv-dot"></div>
+            <div class="hv-dot"></div>
+            <div class="hv-dot"></div>
+            <div class="hv-dot"></div>
+            <div class="hv-dot"></div>
+            <div class="hv-line hv-line-1"></div>
+            <div class="hv-line hv-line-2"></div>
+            <div class="hv-line hv-line-3"></div>
+            <div class="hv-line hv-line-4"></div>
+            <div class="hv-ring"></div>
         </div>
     </section>
 
@@ -1404,7 +1628,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="index.html" class="logo">LEGISLY</a>
+                <a href="#" class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">LEGISLY</a>
                 <p>AI-powered legislative tools that let any business compete — and win. The playing field, leveled.</p>
             </div>
             <div class="footer-column">
