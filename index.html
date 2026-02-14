@@ -127,7 +127,7 @@
 
         .logo {
             font-family: 'Righteous', cursive;
-            font-size: 1.75rem;
+            font-size: 2.275rem;
             letter-spacing: -0.02em;
             color: #ffffff;
             text-decoration: none;
@@ -488,7 +488,7 @@
         /* Comparison Cards */
         .comparison-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
             gap: 1.5rem;
             margin-bottom: 2rem;
             max-width: 1300px;
@@ -554,7 +554,7 @@
         /* Features Section - Light */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
             gap: 1.25rem;
             max-width: 1300px;
             margin: 0 auto;
@@ -1126,7 +1126,7 @@
 
         .email-form input {
             flex: 1;
-            min-width: 280px;
+            min-width: 0;
             padding: 1rem 1.25rem;
             border-radius: 8px;
             border: 1px solid var(--border-color);
@@ -1400,6 +1400,8 @@
 
             .hero-cta {
                 justify-content: center;
+                flex-direction: column;
+                align-items: center;
             }
 
             .hero-visual {
@@ -1419,6 +1421,18 @@
                 grid-template-columns: 1fr;
             }
 
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-card .price {
+                font-size: 2rem;
+            }
+
+            footer {
+                padding: 3rem 1.5rem 2rem;
+            }
+
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
@@ -1435,7 +1449,40 @@
             }
 
             .stats-bar {
-                gap: 2.5rem;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+                padding: 2.5rem 1.5rem;
+            }
+
+            .stat-value {
+                font-size: 2.25rem;
+            }
+
+            .stat-label {
+                font-size: 0.7rem;
+            }
+
+            .cta-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.75rem;
+            }
+
+            .email-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .email-form input {
+                min-width: 0;
+                width: 100%;
+            }
+
+            .email-form button {
+                width: 100%;
             }
 
             .visual-break {
@@ -1478,6 +1525,10 @@
 
             .mock-bill-name {
                 font-size: 0.72rem;
+            }
+
+            .modal {
+                padding: 2rem 1.5rem;
             }
 
             /* Fix: remove expensive SVG filter on mobile so dash animation runs smoothly */
